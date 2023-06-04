@@ -26,7 +26,8 @@ Bu adımlar, projeyi yerel bir makinede çalıştırmak için gereken önkoşull
 
 5.  Yüz tanıma modelini eğitmek için eğitim verilerini oluşturun:
 
-    python trainData.py
+     python imageFace.py  
+     python cameraFace.py
 
 7.  Yüz tanıma modelini eğitin:
 
@@ -37,15 +38,16 @@ Bu adımlar, projeyi yerel bir makinede çalıştırmak için gereken önkoşull
     python cameraFace.py
 
 11.  Bir görüntü üzerinde yüz tanıma yapmak için aşağıdaki komutu kullanın:
-
-    python imageFace.py
+      
+      python faceIdRecog.py
+  
 
 Dosyaların Açıklamaları
 -----------------------
 
 *   `faceIdRecog.py`: Bu dosya, eğitilmiş yüz tanıma modelini kullanarak canlı video akışında yüzleri tanımayı sağlar.
 *   `cameraFace.py`: Bu dosya, kamerayı kullanarak canlı video akışında yüzleri algılar ve tanır.
-*   `imageFace.py`: Bu dosya, bir görüntü dosyası üzerinde yüz tanıma yapar.
+*   `imageFace.py`: Bu dosya, bir görüntü dosyası üzerinde yüzleri algılar ve tanır.
 *   `kisiler.py`: Bu dosya, kişi verilerini içeren bir sınıf ve veritabanı işlemlerini gerçekleştiren bir sınıf içerir.
 *   `trainData.py`: Bu dosya, eğitim verilerini oluşturmak ve yüz tanıma modelini eğitmek için kullanılır.
 
