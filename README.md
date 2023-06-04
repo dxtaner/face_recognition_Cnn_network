@@ -46,9 +46,11 @@ Dosyaların Açıklamaları
 -----------------------
 
 *   `faceIdRecog.py`: Bu dosya, eğitilmiş yüz tanıma modelini kullanarak canlı video akışında yüzleri tanımayı sağlar.
+*   `faceRecog.py`: Bu dosya, eğitilmiş yüz tanıma modelini model1.h5 dosyasını kullanarak canlı video akışında yüzleri tanımayı sağlar.
 *   `cameraFace.py`: Bu dosya, kamerayı kullanarak canlı video akışında yüzleri algılar ve tanır.
 *   `imageFace.py`: Bu dosya, bir görüntü dosyası üzerinde yüzleri algılar ve tanır.
 *   `kisiler.py`: Bu dosya, kişi verilerini içeren bir sınıf ve veritabanı işlemlerini gerçekleştiren bir sınıf içerir.
+*   `kisiler.db`: Bu dosya, kişi verilerini içeren bir sınıf ve veritabanı işlemlerinin depolandığı alandır.
 *   `trainData.py`: Bu dosya, eğitim verilerini oluşturmak ve yüz tanıma modelini eğitmek için kullanılır.
 
 Kullanım
