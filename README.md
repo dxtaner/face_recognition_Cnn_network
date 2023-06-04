@@ -61,10 +61,13 @@ Yüz tanıma uygulamasını çalıştırmak için aşağıdaki adımları izleyi
 1.  Kamerayı kullanarak canlı video akışında yüz tanımak için `cameraFace.py` dosyasını çalıştırın.
 2.  Bir görüntü üzerinde yüz tanımak için `imageFace.py` dosyasını çalıştırın.
 
-Yüz Tanıma Projesi
-
-Yüz Tanıma Projesi Keras Python
+Yüz Tanıma Projesi Keras CnnNetwork Python
 ==================
+
+Açıklama
+--------
+
+Bu proje, yüz tanıma modeli oluşturmayı ve eğitmeyi gösteren bir örnektir. Proje, Keras ve TensorFlow kütüphaneleri kullanılarak geliştirilmiştir.
 
 Gereksinimler
 -------------
@@ -101,12 +104,32 @@ Veri Hazırlığı
     
     *   Her sınıfın kendi adını taşıyan bir alt klasörü olmalıdır.
     *   Eğitim verileri `train` klasörüne, doğrulama verileri `validation` klasörüne yerleştirilmelidir.
-2.  Veri kümesini hazırlamak için, her sınıf için yeterli sayıda görüntü toplayın ve etiketleyin. Görüntüleri uygun alt klasörlere yerleştirin.
+2.  Veri kümesini topladıktan sonra, görüntülerinizi uygun boyuta dönüştürmek için aşağıdaki kodu kullanabilirsiniz:
 
-Model Eğitimi
--------------
+from PIL import Image
+import os
 
-1.  `yüz_tanıma.ipynb` dosyasını Jupyter Notebook veya Google Colab üzerinde açın.
+def resize\_images(directory, size):
+    for filename in os.listdir(directory):
+        if filename.endswith(".jpg") or filename.endswith(".png"):
+            image\_path = os.path.join(directory, filename)
+            img = Image.open(image\_path)
+            img = img.resize(size)
+            img.save(image\_path)
+
+# Eğitim verilerini yeniden boyutlandır
+resize\_images("data/train", (224, 224))
+
+# Doğrulama verilerini yeniden boyutlandır
+resize\_images("data/validation", (224, 224))
+        
+
+4.  Veri setinizi daha da çeşitlendirmek için, isteğe bağlı olarak görüntülerde veri artırma tekniklerini kullanabilirsiniz. Örnek kodda kullanılan `ImageDataGenerator` sınıfı, veri artırma işlemlerini gerçekleştirmek için kullanılmaktadır.
+
+Eğitim
+------
+
+1.  `yüz_tanıma.ipynb` dosyasını Jupyter Notebook veya Google Colab üzerinde açın.
 2.  Kod hücrelerindeki dosya yollarını projenizin dosya yapısına göre düzenleyin:
 `os.chdir("/content/drive/My Drive/yüz tanıma/")` `train_data_gen.flow_from_directory(directory="/content/drive/My Drive/yüz tanıma/data/train", ...)` `val_data_gen.flow_from_directory(directory="/content/drive/My Drive/yüz tanıma/data/validation", ...)`6.  Modeli eğitmek için kod hücrelerini sırasıyla çalıştırın.
 7.  Eğitim tamamlandığında, eğitilmiş model `model1.h5` olarak kaydedilecektir.
@@ -134,5 +157,4 @@ Lisans
 ------
 
 Bu proje MIT lisansı altında lisanslanmıştır. Daha fazla bilgi için `LICENSE` dosyasını inceleyin.
-
 
