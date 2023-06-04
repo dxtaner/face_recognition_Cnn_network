@@ -18,7 +18,7 @@ Bu adımlar, projeyi yerel bir makinede çalıştırmak için gereken önkoşull
 
 1.  Projeyi yerel bir dizine klonlayın:
 
-    git clone https://github.com/kullanici/yuz-tanimlama-uygulamasi.git
+    git clone [https://github.com/kullanici/yuz-tanimlama-uygulamasi.git](https://github.com/dxtaner/face_recognition_Opencv_and_Cnn_network/tree/main)
 
 3.  Proje dizinine gidin:
 
