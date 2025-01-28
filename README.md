@@ -1,94 +1,109 @@
-Yüz Tanıma Uygulaması OpenCv Python
-=====================
 
-Başlangıç
----------
+Face Recognition Application with OpenCV and Python
+===================================================
 
-Bu adımlar, projeyi yerel bir makinede çalıştırmak için gereken önkoşulları ve adımları açıklar.
+Getting Started
+---------------
 
-### Önkoşullar
+These steps outline the prerequisites and steps required to run the project on a local machine.
+
+### Prerequisites
 
 *   Python 3
-*   OpenCV kütüphanesi
-*   NumPy kütüphanesi
+*   OpenCV library
+*   NumPy library
 *   PIL (Python Imaging Library)
 *   SQLite3
 
-### Kurulum
+### Installation
 
-1.  Projeyi yerel bir dizine klonlayın:
+1.  Clone the project to a local directory:
+    
+        git clone https://github.com/dxtaner/face_recognition_Opencv_and_Cnn_network.git
+    
+2.  Navigate to the project directory:
+    
+        cd directory
+    
+3.  Generate training data to train the face recognition model:
+    
+        python imageFace.py
+        python cameraFace.py
+    
+4.  Train the face recognition model:
+    
+        python trainData.py
+    
+5.  To perform face recognition using the camera, run the following command:
+    
+        python cameraFace.py
+    
+6.  To perform face recognition on an image, use the following command:
+    
+        python faceIdRecog.py
+    
 
-    git clone [https://github.com/kullanici/yuz-tanimlama-uygulamasi.git](https://github.com/dxtaner/face_recognition_Opencv_and_Cnn_network/tree/main)
+File Descriptions
+-----------------
 
-3.  Proje dizinine gidin:
+*   `faceIdRecog.py`: This file uses the trained face recognition model to recognize faces in a live video stream.
+*   `faceRecog.py`: This file uses the trained face recognition model from the `model1.h5` file to recognize faces in a live video stream.
+*   `cameraFace.py`: This file detects and recognizes faces in a live video stream using the camera.
+*   `imageFace.py`: This file detects and recognizes faces in an image file.
+*   `kisiler.py`: This file contains a class for person data and a class for database operations.
+*   `kisiler.db`: This file stores the person data and database operations.
+*   `trainData.py`: This file is used to generate training data and train the face recognition model.
 
-    cd yuz-tanimlama-uygulamasi
+Usage
+-----
 
-5.  Yüz tanıma modelini eğitmek için eğitim verilerini oluşturun:
+To run the face recognition application, follow these steps:
 
-     python imageFace.py  
-     python cameraFace.py
+1.  Run the `cameraFace.py` file to recognize faces in a live video stream using the camera.
+2.  Run the `imageFace.py` file to recognize faces in an image.
 
-7.  Yüz tanıma modelini eğitin:
+* * *
 
-    python trainData.py
+Face Recognition Project with Keras and CNN in Python
+=====================================================
 
-9.  Kamera üzerinde yüz tanıma yapmak için aşağıdaki komutu çalıştırın:
+Description
+-----------
 
-    python cameraFace.py
+This project demonstrates how to create and train a face recognition model. The project is developed using the Keras and TensorFlow libraries.
 
-11.  Bir görüntü üzerinde yüz tanıma yapmak için aşağıdaki komutu kullanın:
-      
-      python faceIdRecog.py
-  
-
-Dosyaların Açıklamaları
------------------------
-
-*   `faceIdRecog.py`: Bu dosya, eğitilmiş yüz tanıma modelini kullanarak canlı video akışında yüzleri tanımayı sağlar.
-*   `faceRecog.py`: Bu dosya, eğitilmiş yüz tanıma modelini model1.h5 dosyasını kullanarak canlı video akışında yüzleri tanımayı sağlar.
-*   `cameraFace.py`: Bu dosya, kamerayı kullanarak canlı video akışında yüzleri algılar ve tanır.
-*   `imageFace.py`: Bu dosya, bir görüntü dosyası üzerinde yüzleri algılar ve tanır.
-*   `kisiler.py`: Bu dosya, kişi verilerini içeren bir sınıf ve veritabanı işlemlerini gerçekleştiren bir sınıf içerir.
-*   `kisiler.db`: Bu dosya, kişi verilerini içeren bir sınıf ve veritabanı işlemlerinin depolandığı alandır.
-*   `trainData.py`: Bu dosya, eğitim verilerini oluşturmak ve yüz tanıma modelini eğitmek için kullanılır.
-
-Kullanım
---------
-
-Yüz tanıma uygulamasını çalıştırmak için aşağıdaki adımları izleyin:
-
-1.  Kamerayı kullanarak canlı video akışında yüz tanımak için `cameraFace.py` dosyasını çalıştırın.
-2.  Bir görüntü üzerinde yüz tanımak için `imageFace.py` dosyasını çalıştırın.
-
-Yüz Tanıma Projesi Keras CnnNetwork Python
-==================
-
-Açıklama
---------
-
-Bu proje, yüz tanıma modeli oluşturmayı ve eğitmeyi gösteren bir örnektir. Proje, Keras ve TensorFlow kütüphaneleri kullanılarak geliştirilmiştir.
-
-Gereksinimler
--------------
+Requirements
+------------
 
 *   Python 3.x
 *   Keras 2.4.3
 *   TensorFlow 2.4.1
 
-Kurulum
--------
+Installation
+------------
 
-1.  Gerekli kütüphaneleri yüklemek için aşağıdaki komutu çalıştırın:
-`pip install keras tensorflow`3.  Bu projenin GitHub deposunu klonlayın:
-`git clone https://github.com/kullanici/yuz-tanima-projesi.git` `cd yuz-tanima-projesi`6.  Proje klasörüne Google Drive hesabınızı bağlamak için aşağıdaki adımları izleyin:
-    *   Google Colab kullanıyorsanız, kodunuzda verilen `drive.mount("/content/drive")` satırını çalıştırın.
-    *   Kendi yerel ortamınızda çalışıyorsanız, `google-drive-ocamlfuse` paketini yüklemek için aşağıdaki komutu çalıştırın: `sudo add-apt-repository ppa:alessandro-strada/ppa` `sudo apt-get update` `sudo apt-get install google-drive-ocamlfuse`
+1.  Install the required libraries by running the following command:
+    
+        pip install keras tensorflow
+    
+2.  Clone the GitHub repository of this project:
+    
+        git clone https://github.com/user/face-recognition-project.git
+        cd face-recognition-project
+    
+3.  To connect your Google Drive account to the project folder, follow these steps:
+    *   If you are using Google Colab, execute the `drive.mount("/content/drive")` line provided in your code.
+    *   If you are working on your local environment, install the `google-drive-ocamlfuse` package by running the following commands:
+        
+            sudo add-apt-repository ppa:alessandro-strada/ppa
+            sudo apt-get update
+            sudo apt-get install google-drive-ocamlfuse
+        
 
-Veri Hazırlığı
---------------
+Data Preparation
+----------------
 
-1.  Eğitim ve doğrulama verilerini içeren `data` klasörünü oluşturun. Klasör yapısı şu şekilde olmalıdır:
+1.  Create a `data` folder containing the training and validation data. The folder structure should be as follows:
     
     data/
       |- train/
@@ -102,59 +117,61 @@ Veri Hazırlığı
          |- class3/
                 
     
-    *   Her sınıfın kendi adını taşıyan bir alt klasörü olmalıdır.
-    *   Eğitim verileri `train` klasörüne, doğrulama verileri `validation` klasörüne yerleştirilmelidir.
-2.  Veri kümesini topladıktan sonra, görüntülerinizi uygun boyuta dönüştürmek için aşağıdaki kodu kullanabilirsiniz:
-
-from PIL import Image
-import os
-
-def resize\_images(directory, size):
-    for filename in os.listdir(directory):
-        if filename.endswith(".jpg") or filename.endswith(".png"):
-            image\_path = os.path.join(directory, filename)
-            img = Image.open(image\_path)
-            img = img.resize(size)
-            img.save(image\_path)
-
-# Eğitim verilerini yeniden boyutlandır
-resize\_images("data/train", (224, 224))
-
-# Doğrulama verilerini yeniden boyutlandır
-resize\_images("data/validation", (224, 224))
+    *   Each class should have its own subfolder named after the class.
+    *   Training data should be placed in the `train` folder, and validation data should be placed in the `validation` folder.
+2.  After collecting the dataset, you can use the following code to resize the images to the appropriate size:
+    
+        from PIL import Image
+        import os
         
+        def resize_images(directory, size):
+            for filename in os.listdir(directory):
+                if filename.endswith(".jpg") or filename.endswith(".png"):
+                    image_path = os.path.join(directory, filename)
+                    img = Image.open(image_path)
+                    img = img.resize(size)
+                    img.save(image_path)
+        
+        # Resize training data
+        resize_images("data/train", (224, 224))
+        
+        # Resize validation data
+        resize_images("data/validation", (224, 224))
+    
+3.  To further diversify your dataset, you can optionally use data augmentation techniques on the images. The `ImageDataGenerator` class used in the example code is used to perform data augmentation.
 
-4.  Veri setinizi daha da çeşitlendirmek için, isteğe bağlı olarak görüntülerde veri artırma tekniklerini kullanabilirsiniz. Örnek kodda kullanılan `ImageDataGenerator` sınıfı, veri artırma işlemlerini gerçekleştirmek için kullanılmaktadır.
-
-Eğitim
-------
-
-1.  `yüz_tanıma.ipynb` dosyasını Jupyter Notebook veya Google Colab üzerinde açın.
-2.  Kod hücrelerindeki dosya yollarını projenizin dosya yapısına göre düzenleyin:
-`os.chdir("/content/drive/My Drive/yüz tanıma/")` `train_data_gen.flow_from_directory(directory="/content/drive/My Drive/yüz tanıma/data/train", ...)` `val_data_gen.flow_from_directory(directory="/content/drive/My Drive/yüz tanıma/data/validation", ...)`6.  Modeli eğitmek için kod hücrelerini sırasıyla çalıştırın.
-7.  Eğitim tamamlandığında, eğitilmiş model `model1.h5` olarak kaydedilecektir.
-
-Kullanım
+Training
 --------
 
-1.  Eğitilmiş modeli yükleyin:
+1.  Open the `face_recognition.ipynb` file in Jupyter Notebook or Google Colab.
+2.  Adjust the file paths in the code cells according to your project's file structure:
+    
+        os.chdir("/content/drive/My Drive/face recognition/")
+        train_data_gen.flow_from_directory(directory="/content/drive/My Drive/face recognition/data/train", ...)
+        val_data_gen.flow_from_directory(directory="/content/drive/My Drive/face recognition/data/validation", ...)
+    
+3.  Execute the code cells sequentially to train the model.
+4.  Once training is complete, the trained model will be saved as `model1.h5`.
 
-from keras.models import load\_model
+Usage
+-----
 
-model = load\_model("model1.h5")
+1.  Load the trained model:
+    
+        from keras.models import load_model
         
-
-3.  Yüz tanıma işlemi için giriş görüntüsünü hazırlayın ve modele verin:
-
-\# Görüntüyü yüz tanıma için hazırla
-# ...
-
-# Modeli kullanarak yüzü tanı
-prediction = model.predict(image)
+        model = load_model("model1.h5")
+    
+2.  Prepare the input image for face recognition and feed it to the model:
+    
+        # Prepare the image for face recognition
+        # ...
         
+        # Use the model to recognize the face
+        prediction = model.predict(image)
+    
 
-Lisans
-------
+License
+-------
 
-Bu proje MIT lisansı altında lisanslanmıştır. Daha fazla bilgi için `LICENSE` dosyasını inceleyin.
-
+This project is licensed under the MIT license. For more information, see the `LICENSE` file.
